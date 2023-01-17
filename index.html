@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="calculator">
+
+        <form action="#" name="form">
+            <div class="result">
+                <input type="text" name="disp" id="disp">
+            </div>
+            <div class="buttons">
+                <div class="row">
+                    <input type="button" value="7" name="v7" onclick="valv(v7.value)">
+                    <input type="button" value="8" name="v8" onclick="valv(v8.value)">
+                    <input type="button" value="9" name="v9" onclick="valv(v9.value)">
+                    <input type="button" value="+" name="add" onclick="valv(add.value)">
+                </div>
+                <div class="row">
+                    <input type="button" value="4" name="v4" onclick="valv(v4.value)">
+                    <input type="button" value="5" name="v5" onclick="valv(v5.value)">
+                    <input type="button" value="6" name="v6" onclick="valv(v6.value)">
+                    <input type="button" value="-" name="sub" onclick="valv(sub.value)">
+                </div>
+                <div class="row">
+                    <input type="button" value="1" name="v1" onclick="valv(v1.value)">
+                    <input type="button" value="2" name="v2" onclick="valv(v2.value)">
+                    <input type="button" value="3" name="v3" onclick="valv(v3.value)">
+                    <input type="button" value="*" name="mul" onclick="valv(mul.value)">
+                </div>
+                <div class="row">
+                    <input type="button" value="0" name="v0" onclick="valv(v0.value)">
+                    <input type="button" value="." name="vdot" onclick="valv(vdot.value)">
+                    <input type="button" value="/" name="vdiv" onclick="valv(vdiv.value)">
+                    <input type="button" value="=" name="veql" onclick="calculate()">
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    
+    <script>
+        function valv(result) {
+            form.disp.value = form.disp.value + result;
+        }
+
+        function calculate(){
+            if(form.disp.value == ''){
+                alert('Please enter numbers')
+            }else{
+                form.disp.value = eval(form.disp.value);
+            }
+        }
+
+        var btn = form.veql;
+        btn.addEventListener('dbclick', function(){
+            form.disp.value = '';
+        });
+    </script>
+</body>
+</html>
